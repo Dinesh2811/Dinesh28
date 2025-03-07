@@ -69,10 +69,6 @@ dependencies {
     implementation(libs.hiddenapibypass)
 
 
-////    implementation("androidx.core:core-ktx:1.15.0")
-//    implementation("androidx.appcompat:appcompat:1.7.0")
-////    implementation("androidx.activity:activity-ktx:1.10.0")
-
     implementation(libs.bundles.android)
     implementation(libs.bundles.compose)
     implementation(platform(libs.androidx.compose.bom))
@@ -81,71 +77,32 @@ dependencies {
     //  ViewModel & LiveData
     implementation(libs.bundles.lifecycle)
 
-//    //  Room components
-//    implementation(libs.bundles.room)
-//    ksp(libs.androidx.room.compiler)    //  kapt or ksp
-//
-//    // Serialization
-//    implementation(libs.bundles.serialization)
-//
-//    // HTTP
-//    implementation(libs.bundles.okhttp)
-//
-//    // Chucker
-//    debugImplementation(libs.chucker.debug)
-//    releaseImplementation(libs.chucker.release)
-//
-//    // Navigation Component
-//    implementation(libs.bundles.navigation)
-//
-//    // Paging
-//    implementation(libs.bundles.paging)
-//
-//    // Animation
-//    implementation(libs.bundles.animation)
-//
-//    // Location Services
-//    implementation(libs.play.services.location)
-//
-//    // RecyclerView
-//    implementation(libs.androidx.swiperefreshlayout)
-//
-//    // Volley
-//    implementation(libs.volley)
-//
-//    androidTestImplementation(libs.bundles.android.test)
-//    debugImplementation(libs.bundles.debug)
-//    testImplementation(libs.bundles.test)
-//
-//    //  Dagger
-//    implementation(libs.bundles.dagger)
-//    ksp(libs.dagger.compiler)
-//
-//    //  Hilt
-//    implementation(libs.bundles.hilt)
-//    ksp(libs.bundles.hilt.compiler)
-//
-//    // WorkManager
-//    implementation(libs.work.manager)
-//
-//    // DataStore
-//    implementation(libs.bundles.datastore.preferences)
-//
-//    // Protobuf
-//    implementation(libs.bundles.protobuf.datastore)
-//
-//    // Security
-//    implementation(libs.bundles.security)
-//
-//    implementation(libs.splashscreen)
-//    implementation(libs.leakcanary)
-//
-//    // Pluto
-//    debugImplementation(libs.bundles.debug.pluto)
-//    releaseImplementation(libs.bundles.release.pluto)
-//
-//    implementation(libs.libphonenumber)
-//    implementation(libs.rebugger)
+    //  Room components
+    implementation(libs.bundles.room)
+    ksp(libs.androidx.room.compiler)
+
+    // Serialization
+    implementation(libs.bundles.serialization)
+
+    // Navigation Component
+    implementation(libs.bundles.navigation)
+
+    androidTestImplementation(libs.bundles.android.test)
+    debugImplementation(libs.bundles.debug)
+    testImplementation(libs.bundles.test)
+
+    // WorkManager
+    implementation(libs.work.manager)
+
+    // DataStore
+    implementation(libs.bundles.datastore.preferences)
+
+    implementation(libs.splashscreen)
+    implementation(libs.leakcanary)
+
+    // Pluto
+    debugImplementation(libs.bundles.debug.pluto)
+    releaseImplementation(libs.bundles.release.pluto)
 }
 
 /*
