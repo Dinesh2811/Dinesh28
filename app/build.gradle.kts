@@ -3,7 +3,7 @@ plugins {
     alias(libs.plugins.kotlin.android)
     alias(libs.plugins.lsplugin.jgit)
     alias(libs.plugins.lsplugin.apksign)
-    alias(libs.plugins.kotlin.compose)
+    alias(libs.plugins.compose)
 }
 
 android {
@@ -47,6 +47,115 @@ android {
     }
 }
 
+
+dependencies {
+    compileOnly(project(":libxposed-compat"))
+
+    compileOnly(project(":api"))    //  https://github.com/libxposed/api.git
+    compileOnly(project(":checks")) //  https://github.com/libxposed/api.git
+
+    compileOnly(project(":service"))    //  https://github.com/libxposed/service.git
+    implementation(project(":interface"))   //  https://github.com/libxposed/service.git
+
+//    compileOnly("io.github.libxposed:api:100")
+//    implementation("io.github.libxposed:service:100-1.0.0")
+
+    compileOnly("de.robv.android.xposed:api:82")
+    compileOnly("de.robv.android.xposed:api:82:sources")
+
+    implementation(libs.hiddenapibypass)
+
+
+////    implementation("androidx.core:core-ktx:1.15.0")
+//    implementation("androidx.appcompat:appcompat:1.7.0")
+////    implementation("androidx.activity:activity-ktx:1.10.0")
+
+    implementation(libs.bundles.android)
+    implementation(libs.bundles.compose)
+    implementation(platform(libs.androidx.compose.bom))
+    androidTestImplementation(platform(libs.androidx.compose.bom))
+
+    //  ViewModel & LiveData
+    implementation(libs.bundles.lifecycle)
+
+//    //  Room components
+//    implementation(libs.bundles.room)
+//    ksp(libs.androidx.room.compiler)    //  kapt or ksp
+//
+//    // Glide
+//    implementation(libs.glide)
+//    annotationProcessor(libs.compiler)
+//
+//    // Retrofit
+//    implementation(libs.bundles.retrofit)
+//
+//    // Gson
+//    implementation(libs.bundles.gson)
+//
+//    // Serialization
+//    implementation(libs.bundles.serialization)
+//
+//    // HTTP
+//    implementation(libs.bundles.okhttp)
+//
+//    // Chucker
+//    debugImplementation(libs.chucker.debug)
+//    releaseImplementation(libs.chucker.release)
+//
+//    // Navigation Component
+//    implementation(libs.bundles.navigation)
+//
+//    // Paging
+//    implementation(libs.bundles.paging)
+//
+//    // Animation
+//    implementation(libs.bundles.animation)
+//
+//    // Location Services
+//    implementation(libs.play.services.location)
+//
+//    // RecyclerView
+//    implementation(libs.androidx.swiperefreshlayout)
+//
+//    // Volley
+//    implementation(libs.volley)
+//
+//    androidTestImplementation(libs.bundles.android.test)
+//    debugImplementation(libs.bundles.debug)
+//    testImplementation(libs.bundles.test)
+//
+//    //  Dagger
+//    implementation(libs.bundles.dagger)
+//    ksp(libs.dagger.compiler)
+//
+//    //  Hilt
+//    implementation(libs.bundles.hilt)
+//    ksp(libs.bundles.hilt.compiler)
+//
+//    // WorkManager
+//    implementation(libs.work.manager)
+//
+//    // DataStore
+//    implementation(libs.bundles.datastore.preferences)
+//
+//    // Protobuf
+//    implementation(libs.bundles.protobuf.datastore)
+//
+//    // Security
+//    implementation(libs.bundles.security)
+//
+//    implementation(libs.splashscreen)
+//    implementation(libs.leakcanary)
+//
+//    // Pluto
+//    debugImplementation(libs.bundles.debug.pluto)
+//    releaseImplementation(libs.bundles.release.pluto)
+//
+//    implementation(libs.libphonenumber)
+//    implementation(libs.rebugger)
+}
+
+/*
 dependencies {
     compileOnly(project(":libxposed-compat"))
 
@@ -119,6 +228,8 @@ dependencies {
 
 }
 
+ */
+
 
 /*
 [versions]
@@ -158,56 +269,3 @@ kotlin-compose = { id = "org.jetbrains.kotlin.plugin.compose", version.ref = "ko
  */
 
 
-
-
-
-
-/*
-[versions]
-androidGradlePlugin = "8.8.2"
-kotlin = "2.1.10"
-lifecycleRuntimeKtx = "2.8.7"
-activityCompose = "1.10.1"
-composeBom = "2025.02.00"
-accompanistDrawablepainter = "0.37.2"
-libxposed = "100"
-libxposedService = "100-1.0.0"
-xposed = "82"
-hiddenapibypass = "6.1"
-androidxAnnotation = "1.9.1"
-lint = "31.8.2"
-kotlinStdlib = "2.1.10"
-lspluginJgit = "1.1"
-lspluginApksign = "1.4"
-
-[libraries]
-androidx-lifecycle-runtimeKtx = { module = "androidx.lifecycle:lifecycle-runtime-ktx", version.ref = "lifecycleRuntimeKtx" }
-androidx-activity-compose = { module = "androidx.activity:activity-compose", version.ref = "activityCompose" }
-androidx-compose-bom = { module = "androidx.compose:compose-bom", version.ref = "composeBom" }
-androidx-compose-material3 = { module = "androidx.compose.material3:material3" }
-androidx-compose-animation-core-android = { module = "androidx.compose.animation:animation-core-android", version = "1.7.8" }
-androidx-compose-animation-android = { module = "androidx.compose.animation:animation-android", version = "1.7.8" }
-androidx-compose-ui = { module = "androidx.compose.ui:ui" }
-androidx-compose-ui-graphics = { module = "androidx.compose.ui:ui-graphics" }
-accompanist-drawablepainter = { module = "com.google.accompanist:accompanist-drawablepainter", version.ref = "accompanistDrawablepainter" }
-libxposed-api = { module = "io.github.libxposed:api", version.ref = "libxposed" }
-libxposed-service = { module = "io.github.libxposed:service", version.ref = "libxposedService" }
-xposed-api = { module = "de.robv.android.xposed:api", version.ref = "xposed" }
-xposed-api-sources = { module = "de.robv.android.xposed:api", version.ref = "xposed" }
-hiddenapibypass = { module = "org.lsposed.hiddenapibypass:hiddenapibypass", version.ref = "hiddenapibypass" }
-androidx-annotation = { module = "androidx.annotation:annotation", version.ref = "androidxAnnotation" }
-lint-api = { module = "com.android.tools.lint:lint-api", version.ref = "lint" }
-lint-checks = { module = "com.android.tools.lint:lint-checks", version.ref = "lint" }
-kotlin-stdlib = { module = "org.jetbrains.kotlin:kotlin-stdlib", version.ref = "kotlinStdlib" }
-
-[plugins]
-android-application = { id = "com.android.application", version.ref = "androidGradlePlugin" }
-android-library = { id = "com.android.library", version.ref = "androidGradlePlugin" }
-kotlin-android = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
-kotlin-compose = { id = "org.jetbrains.kotlin.plugin.compose", version.ref = "kotlin" }
-lsplugin-jgit = { id = "org.lsposed.lsplugin.jgit", version.ref = "lspluginJgit" }
-lsplugin-apksign = { id = "org.lsposed.lsplugin.apksign", version.ref = "lspluginApksign" }
-mavenPublish = { id = "maven-publish" }
-signing = { id = "signing" }
-
- */
