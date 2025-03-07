@@ -1,16 +1,16 @@
 -- Merging decision tree log ---
 manifest
-ADDED from D:\ANDROID STUDIO\0_Master Projects\Dinesh28\interface\build\intermediates\tmp\ProcessLibraryManifest\debug\tempAndroidManifest5765019652468384322.xml:2:13-83
-INJECTED from D:\ANDROID STUDIO\0_Master Projects\Dinesh28\interface\build\intermediates\tmp\ProcessLibraryManifest\debug\tempAndroidManifest5765019652468384322.xml:2:13-83
+ADDED from D:\ANDROID STUDIO\0_Master Projects\Dinesh28\interface\build\intermediates\tmp\ProcessLibraryManifest\debug\tempAndroidManifest8774164355989929350.xml:2:13-83
+INJECTED from D:\ANDROID STUDIO\0_Master Projects\Dinesh28\interface\build\intermediates\tmp\ProcessLibraryManifest\debug\tempAndroidManifest8774164355989929350.xml:2:13-83
 	package
-		INJECTED from D:\ANDROID STUDIO\0_Master Projects\Dinesh28\interface\build\intermediates\tmp\ProcessLibraryManifest\debug\tempAndroidManifest5765019652468384322.xml
+		INJECTED from D:\ANDROID STUDIO\0_Master Projects\Dinesh28\interface\build\intermediates\tmp\ProcessLibraryManifest\debug\tempAndroidManifest8774164355989929350.xml
 	xmlns:android
-		ADDED from D:\ANDROID STUDIO\0_Master Projects\Dinesh28\interface\build\intermediates\tmp\ProcessLibraryManifest\debug\tempAndroidManifest5765019652468384322.xml:2:23-81
+		ADDED from D:\ANDROID STUDIO\0_Master Projects\Dinesh28\interface\build\intermediates\tmp\ProcessLibraryManifest\debug\tempAndroidManifest8774164355989929350.xml:2:23-81
 uses-sdk
-INJECTED from D:\ANDROID STUDIO\0_Master Projects\Dinesh28\interface\build\intermediates\tmp\ProcessLibraryManifest\debug\tempAndroidManifest5765019652468384322.xml reason: use-sdk injection requested
-INJECTED from D:\ANDROID STUDIO\0_Master Projects\Dinesh28\interface\build\intermediates\tmp\ProcessLibraryManifest\debug\tempAndroidManifest5765019652468384322.xml
-INJECTED from D:\ANDROID STUDIO\0_Master Projects\Dinesh28\interface\build\intermediates\tmp\ProcessLibraryManifest\debug\tempAndroidManifest5765019652468384322.xml
+INJECTED from D:\ANDROID STUDIO\0_Master Projects\Dinesh28\interface\build\intermediates\tmp\ProcessLibraryManifest\debug\tempAndroidManifest8774164355989929350.xml reason: use-sdk injection requested
+INJECTED from D:\ANDROID STUDIO\0_Master Projects\Dinesh28\interface\build\intermediates\tmp\ProcessLibraryManifest\debug\tempAndroidManifest8774164355989929350.xml
+INJECTED from D:\ANDROID STUDIO\0_Master Projects\Dinesh28\interface\build\intermediates\tmp\ProcessLibraryManifest\debug\tempAndroidManifest8774164355989929350.xml
 	android:targetSdkVersion
-		INJECTED from D:\ANDROID STUDIO\0_Master Projects\Dinesh28\interface\build\intermediates\tmp\ProcessLibraryManifest\debug\tempAndroidManifest5765019652468384322.xml
+		INJECTED from D:\ANDROID STUDIO\0_Master Projects\Dinesh28\interface\build\intermediates\tmp\ProcessLibraryManifest\debug\tempAndroidManifest8774164355989929350.xml
 	android:minSdkVersion
-		INJECTED from D:\ANDROID STUDIO\0_Master Projects\Dinesh28\interface\build\intermediates\tmp\ProcessLibraryManifest\debug\tempAndroidManifest5765019652468384322.xml
+		INJECTED from D:\ANDROID STUDIO\0_Master Projects\Dinesh28\interface\build\intermediates\tmp\ProcessLibraryManifest\debug\tempAndroidManifest8774164355989929350.xml

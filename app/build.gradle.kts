@@ -52,17 +52,34 @@ android {
 
 
 dependencies {
-    compileOnly(project(":libxposed-compat"))
 
-    compileOnly(project(":api"))    //  https://github.com/libxposed/api.git
-    compileOnly(project(":checks")) //  https://github.com/libxposed/api.git
+//    compileOnly(project(":libxposed-compat"))
+//    compileOnly(project(":api"))    //  https://github.com/libxposed/api.git
+//    compileOnly(project(":checks")) //  https://github.com/libxposed/api.git
+//
+//    compileOnly(project(":service"))    //  https://github.com/libxposed/service.git
+//    implementation(project(":interface"))   //  https://github.com/libxposed/service.git
 
-    compileOnly(project(":service"))    //  https://github.com/libxposed/service.git
-    implementation(project(":interface"))   //  https://github.com/libxposed/service.git
+
+//    compileOnly(project(":library:libxposed"))
+    compileOnly(project(":library:libxposed:libxposed-compat"))
+    compileOnly(project(":library:libxposed:api"))    //  https://github.com/libxposed/api.git
+    compileOnly(project(":library:libxposed:api:checks")) //  https://github.com/libxposed/api.git
+
+    compileOnly(project(":library:libxposed:service"))    //  https://github.com/libxposed/service.git
+    implementation(project(":library:libxposed:service:interface"))   //  https://github.com/libxposed/service.git
+
+//    include(":library:libxposed")
+//    include(":library:libxposed:api")
+//    include(":library:libxposed:api:checks")
+//    include(":library:libxposed:service")
+//    include(":library:libxposed:service:interface")
+//    include(":library:libxposed:libxposed-compat")
 
 //    compileOnly("io.github.libxposed:api:100")
 //    implementation("io.github.libxposed:service:100-1.0.0")
 
+    //  Xposed AP
     compileOnly("de.robv.android.xposed:api:82")
     compileOnly("de.robv.android.xposed:api:82:sources")
 

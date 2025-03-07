@@ -59,4 +59,13 @@ sourceControl {
 }
 
 rootProject.name = "Dinesh28"
-include(":app", ":libxposed-compat", ":api", ":checks", ":service", ":interface")
+include(":app", ":api", ":checks", ":service", ":interface")
+
+include(":library:libxposed")
+include(":library:libxposed:api")
+include(":library:libxposed:api:checks")
+include(":library:libxposed:service")
+include(":library:libxposed:service:interface")
+include(":library:libxposed:libxposed-compat")
+
+include(":library:lib1")

@@ -14,7 +14,14 @@
             <option value="$PROJECT_DIR$/app" />
             <option value="$PROJECT_DIR$/checks" />
             <option value="$PROJECT_DIR$/interface" />
-            <option value="$PROJECT_DIR$/libxposed-compat" />
+            <option value="$PROJECT_DIR$/library" />
+            <option value="$PROJECT_DIR$/library/lib1" />
+            <option value="$PROJECT_DIR$/library/libxposed" />
+            <option value="$PROJECT_DIR$/library/libxposed/api" />
+            <option value="$PROJECT_DIR$/library/libxposed/api/checks" />
+            <option value="$PROJECT_DIR$/library/libxposed/libxposed-compat" />
+            <option value="$PROJECT_DIR$/library/libxposed/service" />
+            <option value="$PROJECT_DIR$/library/libxposed/service/interface" />
             <option value="$PROJECT_DIR$/service" />
           </set>
         </option>
