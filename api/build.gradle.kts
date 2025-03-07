@@ -36,5 +36,5 @@ android {
 
 dependencies {
     compileOnly(libs.androidx.annotation)
-//    lintPublish(project(":checks"))
+    lintPublish(project(":checks"))
 }
