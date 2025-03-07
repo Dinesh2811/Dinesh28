@@ -1,4 +1,4 @@
-package com.dinesh.circleToSearch.ui.theme
+package com.dinesh.ui.theme
 
 import androidx.compose.ui.graphics.Color
 

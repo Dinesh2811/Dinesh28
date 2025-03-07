@@ -58,5 +58,5 @@ sourceControl {
     }
 }
 
-rootProject.name = "CircleToSearch"
+rootProject.name = "Dinesh28"
 include(":app", ":libxposed-compat", ":api", ":checks", ":service", ":interface")

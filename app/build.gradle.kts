@@ -7,11 +7,11 @@ plugins {
 }
 
 android {
-    namespace = "com.dinesh.circleToSearch"
+    namespace = "com.dinesh"
     compileSdk = rootProject.extra["compileSdk"] as Int
 
     defaultConfig {
-        applicationId = "com.dinesh.circleToSearch"
+        applicationId = "com.dinesh"
         minSdk = rootProject.extra["minSdk"] as Int
         targetSdk = rootProject.extra["targetSdk"] as Int
         versionCode = 1
