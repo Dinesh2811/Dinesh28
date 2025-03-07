@@ -1,9 +1,12 @@
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.android)
+    alias(libs.plugins.ksp)
+    alias(libs.plugins.serialization)
+    alias(libs.plugins.compose)
+
     alias(libs.plugins.lsplugin.jgit)
     alias(libs.plugins.lsplugin.apksign)
-    alias(libs.plugins.compose)
 }
 
 android {
@@ -81,16 +84,6 @@ dependencies {
 //    //  Room components
 //    implementation(libs.bundles.room)
 //    ksp(libs.androidx.room.compiler)    //  kapt or ksp
-//
-//    // Glide
-//    implementation(libs.glide)
-//    annotationProcessor(libs.compiler)
-//
-//    // Retrofit
-//    implementation(libs.bundles.retrofit)
-//
-//    // Gson
-//    implementation(libs.bundles.gson)
 //
 //    // Serialization
 //    implementation(libs.bundles.serialization)
