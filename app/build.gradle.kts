@@ -60,7 +60,8 @@ dependencies {
 //    compileOnly(project(":service"))    //  https://github.com/libxposed/service.git
 //    implementation(project(":interface"))   //  https://github.com/libxposed/service.git
 
-    implementation(project(":library:CircleToSearch"))
+//    implementation(project(":library:CircleToSearch"))
+    api(project(":library:CircleToSearch"))
 
 //    compileOnly(project(":library:CircleToSearch"))
 
@@ -119,12 +120,12 @@ dependencies {
     // DataStore
     implementation(libs.bundles.datastore.preferences)
 
-    implementation(libs.splashscreen)
-    implementation(libs.leakcanary)
-
-    // Pluto
-    debugImplementation(libs.bundles.debug.pluto)
-    releaseImplementation(libs.bundles.release.pluto)
+//    implementation(libs.splashscreen)
+//    implementation(libs.leakcanary)
+//
+//    // Pluto
+//    debugImplementation(libs.bundles.debug.pluto)
+//    releaseImplementation(libs.bundles.release.pluto)
 }
 
 /*
