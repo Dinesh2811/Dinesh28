@@ -1,5 +1,6 @@
 package com.dinesh
 
+import android.content.Intent
 import android.os.Bundle
 import android.widget.Toast
 import androidx.activity.ComponentActivity
@@ -36,16 +37,17 @@ class MainActivity: ComponentActivity() {
             }
         }
 
+//        startActivity(Intent(this, com.parallelc.micts.ui.activity.MainActivity::class.java))
 
-        val prefs = getSharedPreferences(CONFIG_NAME, MODE_PRIVATE)
-        val key = if (intent.getBooleanExtra("from_tile", false)) KEY_TILE_DELAY else KEY_DEFAULT_DELAY
-        val delay = prefs.getLong(key, DEFAULT_CONFIG[key] as Long)
-        if (delay > 0) {
-            Thread.sleep(delay)
-        }
-        if (!triggerCircleToSearch(1, this, prefs.getBoolean(KEY_VIBRATE, DEFAULT_CONFIG[KEY_VIBRATE] as Boolean))) {
-            Toast.makeText(this, getString(R.string.trigger_failed), Toast.LENGTH_SHORT).show()
-        }
+//        val prefs = getSharedPreferences(CONFIG_NAME, MODE_PRIVATE)
+//        val key = if (intent.getBooleanExtra("from_tile", false)) KEY_TILE_DELAY else KEY_DEFAULT_DELAY
+//        val delay = prefs.getLong(key, DEFAULT_CONFIG[key] as Long)
+//        if (delay > 0) {
+//            Thread.sleep(delay)
+//        }
+//        if (!triggerCircleToSearch(1, this, prefs.getBoolean(KEY_VIBRATE, DEFAULT_CONFIG[KEY_VIBRATE] as Boolean))) {
+//            Toast.makeText(this, getString(R.string.trigger_failed), Toast.LENGTH_SHORT).show()
+//        }
         finish()
 
     }
