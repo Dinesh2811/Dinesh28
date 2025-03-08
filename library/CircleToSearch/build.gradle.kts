@@ -1,6 +1,9 @@
 plugins {
     alias(libs.plugins.android.library)
     alias(libs.plugins.kotlin.android)
+    alias(libs.plugins.lsplugin.jgit)
+    alias(libs.plugins.lsplugin.apksign)
+    alias(libs.plugins.compose)
 }
 
 android {
@@ -21,11 +24,15 @@ android {
         }
     }
     compileOptions {
-        sourceCompatibility = JavaVersion.VERSION_11
-        targetCompatibility = JavaVersion.VERSION_11
+        sourceCompatibility = rootProject.extra["javaVersion"] as JavaVersion
+        targetCompatibility = rootProject.extra["javaVersion"] as JavaVersion
     }
-    kotlinOptions {
-        jvmTarget = "11"
+    kotlin {
+        jvmToolchain(rootProject.extra["jvmToolchain"] as Int)
+    }
+    buildFeatures {
+        buildConfig = true
+        compose = true
     }
 }
 
