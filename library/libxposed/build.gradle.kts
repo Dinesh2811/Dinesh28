@@ -30,11 +30,27 @@ android {
 }
 
 dependencies {
+    compileOnly(project(":library:libxposed:libxposed-compat"))
+    compileOnly(project(":library:libxposed:api"))    //  https://github.com/libxposed/api.git
+    compileOnly(project(":library:libxposed:api:checks")) //  https://github.com/libxposed/api.git
 
-    implementation(libs.androidx.core.ktx)
-    implementation(libs.androidx.appcompat)
-    implementation(libs.material)
+    compileOnly(project(":library:libxposed:service"))    //  https://github.com/libxposed/service.git
+    implementation(project(":library:libxposed:service:interface"))   //  https://github.com/libxposed/service.git
+
+    //  Xposed AP
+    compileOnly("de.robv.android.xposed:api:82")
+    compileOnly("de.robv.android.xposed:api:82:sources")
+
+    implementation(libs.hiddenapibypass)
+    implementation(libs.hiddenapibypass)
+
+    implementation(libs.bundles.android)
+    implementation(libs.bundles.compose)
+    implementation(platform(libs.androidx.compose.bom))
+    androidTestImplementation(platform(libs.androidx.compose.bom))
+    implementation(libs.accompanist.drawablepainter)
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
-    androidTestImplementation(libs.androidx.espresso.core)
+//    implementation(libs.androidx.compose.animation.core.android)
+//    implementation(libs.androidx.compose.animation.android)
 }
