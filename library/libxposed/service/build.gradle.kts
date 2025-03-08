@@ -8,7 +8,7 @@ plugins {
 }
 
 android {
-    namespace = "io.github.libxposed.service"
+    namespace = "io.github.libxposed.serviceInterface"
     compileSdk = rootProject.extra["compileSdk"] as Int
 //    buildToolsVersion = "34.0.0"
 

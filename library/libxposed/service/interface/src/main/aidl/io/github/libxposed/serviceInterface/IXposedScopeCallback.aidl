@@ -1,4 +1,4 @@
-package io.github.libxposed.service;
+package io.github.libxposed.serviceInterface;
 
 interface IXposedScopeCallback {
     oneway void onScopeRequestPrompted(String packageName) = 1;

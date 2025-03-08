@@ -7,6 +7,8 @@ import androidx.annotation.NonNull;
 
 import java.util.HashSet;
 import java.util.Set;
+import io.github.libxposed.serviceInterface.IXposedScopeCallback;
+import io.github.libxposed.serviceInterface.IXposedService;
 
 @SuppressWarnings("unused")
 public final class XposedServiceHelper {

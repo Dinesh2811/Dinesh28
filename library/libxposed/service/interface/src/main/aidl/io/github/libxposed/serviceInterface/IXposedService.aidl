@@ -1,5 +1,6 @@
-package io.github.libxposed.service;
-import io.github.libxposed.service.IXposedScopeCallback;
+package io.github.libxposed.serviceInterface;
+
+import io.github.libxposed.serviceInterface.IXposedScopeCallback;
 
 interface IXposedService {
     const int API = 100;

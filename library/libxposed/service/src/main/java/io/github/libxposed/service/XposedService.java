@@ -12,6 +12,8 @@ import java.util.List;
 import java.util.Map;
 import java.util.WeakHashMap;
 import java.util.concurrent.locks.ReentrantReadWriteLock;
+import io.github.libxposed.serviceInterface.IXposedScopeCallback;
+import io.github.libxposed.serviceInterface.IXposedService;
 
 @SuppressWarnings("unused")
 public final class XposedService {
