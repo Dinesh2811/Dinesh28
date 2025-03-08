@@ -5,10 +5,10 @@ plugins {
 
 android {
     namespace = "com.dinesh.lib1"
-    compileSdk = 35
+    compileSdk = rootProject.extra["compileSdk"] as Int
 
     defaultConfig {
-        minSdk = 26
+        minSdk = rootProject.extra["minSdk"] as Int
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
         consumerProguardFiles("consumer-rules.pro")

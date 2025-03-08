@@ -32,6 +32,9 @@ leakcanary = "3.0-alpha-8"
 pluto = "2.2.2"
 
 
+accompanistDrawablepainter = "0.37.2"
+composeAnimation = "1.7.8"
+
 libxposed = "100"
 libxposedService = "100-1.0.0"
 hiddenapibypass = "6.1"
@@ -109,6 +112,9 @@ release-pluto = { module = "com.plutolib.plugins:exceptions-no-op", version.ref 
 release-pluto-exceptions = { module = "com.plutolib:pluto-no-op", version.ref = "pluto" }
 
 
+accompanist-drawablepainter = { module = "com.google.accompanist:accompanist-drawablepainter", version.ref = "accompanistDrawablepainter" }
+androidx-compose-animation-core-android = { module = "androidx.compose.animation:animation-core-android", version = "composeAnimation" }
+androidx-compose-animation-android = { module = "androidx.compose.animation:animation-android", version = "composeAnimation" }
 
 libxposed-api = { module = "io.github.libxposed:api", version.ref = "libxposed" }
 libxposed-service = { module = "io.github.libxposed:service", version.ref = "libxposedService" }

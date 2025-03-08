@@ -1,0 +1,78 @@
+package com.parallelc.micts.ui.activity
+
+import android.annotation.SuppressLint
+import android.app.Activity
+import android.content.Context
+import android.media.AudioAttributes
+import android.os.Build
+import android.os.Bundle
+import android.os.IBinder
+import android.os.SystemClock
+import android.os.VibrationEffect
+import android.os.Vibrator
+import android.util.Log
+import android.widget.Toast
+import com.parallelc.micts.R
+import com.parallelc.micts.config.AppConfig.CONFIG_NAME
+import com.parallelc.micts.config.AppConfig.DEFAULT_CONFIG
+import com.parallelc.micts.config.AppConfig.KEY_DEFAULT_DELAY
+import com.parallelc.micts.config.AppConfig.KEY_TILE_DELAY
+import com.parallelc.micts.config.AppConfig.KEY_VIBRATE
+import com.parallelc.micts.module
+import org.lsposed.hiddenapibypass.HiddenApiBypass
+
+@SuppressLint("PrivateApi")
+fun triggerCircleToSearch(entryPoint: Int, context: Context?, vibrate: Boolean): Boolean {
+    val result =  runCatching {
+        val bundle = Bundle()
+        bundle.putLong("invocation_time_ms", SystemClock.elapsedRealtime())
+        bundle.putInt("omni.entry_point", entryPoint)
+        bundle.putBoolean("micts_trigger", true)
+        val iVimsClass = Class.forName("com.android.internal.app.IVoiceInteractionManagerService")
+        val vis = Class.forName("android.os.ServiceManager").getMethod("getService", String::class.java).invoke(null, "voiceinteraction")
+        val vims = Class.forName("com.android.internal.app.IVoiceInteractionManagerService\$Stub").getMethod("asInterface", IBinder::class.java).invoke(null, vis)
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.UPSIDE_DOWN_CAKE) {
+            HiddenApiBypass.invoke(iVimsClass, vims, "showSessionFromSession", null, bundle, 7, "hyperOS_home") as Boolean
+        } else {
+            HiddenApiBypass.invoke(iVimsClass, vims, "showSessionFromSession", null, bundle, 7) as Boolean
+        }
+    }.onFailure { e ->
+        val errMsg = "triggerCircleToSearch invoke omni failed: " + e.stackTraceToString()
+        module?.log(errMsg) ?: Log.e("MiCTS", errMsg)
+    }.getOrDefault(false)
+    if (result && vibrate && context != null) {
+        runCatching {
+            (context.getSystemService(Context.VIBRATOR_SERVICE) as Vibrator).run {
+                val attr = AudioAttributes.Builder()
+                    .setUsage(AudioAttributes.USAGE_ASSISTANCE_ACCESSIBILITY)
+                    .setFlags(128)
+                    .build()
+                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q) {
+                    vibrate(VibrationEffect.createPredefined(VibrationEffect.EFFECT_CLICK), attr)
+                } else {
+                    vibrate(longArrayOf(0, 1, 75, 76), -1, attr)
+                }
+            }
+        }.onFailure { e ->
+            val errMsg = "triggerCircleToSearch vibrate failed: " + e.stackTraceToString()
+            module?.log(errMsg) ?: Log.e("MiCTS", errMsg)
+        }
+    }
+    return result
+}
+
+class MainActivity : Activity() {
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        val prefs = getSharedPreferences(CONFIG_NAME, MODE_PRIVATE)
+        val key = if (intent.getBooleanExtra("from_tile", false)) KEY_TILE_DELAY else KEY_DEFAULT_DELAY
+        val delay = prefs.getLong(key, DEFAULT_CONFIG[key] as Long)
+        if (delay > 0) {
+            Thread.sleep(delay)
+        }
+        if (!triggerCircleToSearch(1, this, prefs.getBoolean(KEY_VIBRATE, DEFAULT_CONFIG[KEY_VIBRATE] as Boolean))) {
+            Toast.makeText(this, getString(R.string.trigger_failed), Toast.LENGTH_SHORT).show()
+        }
+        finish()
+    }
+}

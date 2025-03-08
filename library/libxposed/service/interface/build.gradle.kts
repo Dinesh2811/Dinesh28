@@ -1,40 +1,35 @@
 plugins {
     alias(libs.plugins.android.library)
-    alias(libs.plugins.kotlin.android)
+    alias(libs.plugins.mavenPublish)
+    alias(libs.plugins.signing)
+//    id("maven-publish")
+//    id("signing")
 }
 
 android {
     namespace = "io.github.libxposed.service"
-    compileSdk = 35
+    compileSdk = rootProject.extra["compileSdk"] as Int
+//    buildToolsVersion = "34.0.0"
 
     defaultConfig {
-        minSdk = 26
-
-        testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
-        consumerProguardFiles("consumer-rules.pro")
+        minSdk = rootProject.extra["minSdk"] as Int
     }
 
-    buildTypes {
-        release {
-            isMinifyEnabled = false
-            proguardFiles(getDefaultProguardFile("proguard-android-optimize.txt"), "proguard-rules.pro")
+    buildFeatures {
+        buildConfig = false
+        resValues = false
+        aidl = true
+    }
+
+    compileOptions {
+        targetCompatibility = rootProject.extra["javaVersion"] as JavaVersion
+        sourceCompatibility = rootProject.extra["javaVersion"] as JavaVersion
+    }
+
+    publishing {
+        singleVariant("release") {
+            withSourcesJar()
+            withJavadocJar()
         }
     }
-    compileOptions {
-        sourceCompatibility = JavaVersion.VERSION_11
-        targetCompatibility = JavaVersion.VERSION_11
-    }
-    kotlinOptions {
-        jvmTarget = "11"
-    }
-}
-
-dependencies {
-
-    implementation(libs.androidx.core.ktx)
-    implementation(libs.androidx.appcompat)
-    implementation(libs.material)
-    testImplementation(libs.junit)
-    androidTestImplementation(libs.androidx.junit)
-    androidTestImplementation(libs.androidx.espresso.core)
 }

@@ -1,5 +1,8 @@
 import java.net.URI
 
+include(":library:CircleToSearch")
+
+
 pluginManagement {
     repositories {
         google {
