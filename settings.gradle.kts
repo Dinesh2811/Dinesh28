@@ -59,7 +59,7 @@ sourceControl {
 }
 
 rootProject.name = "Dinesh28"
-include(":app", ":api", ":checks", ":service", ":interface")
+include(":app")
 
 include(":library:libxposed")
 include(":library:libxposed:api")

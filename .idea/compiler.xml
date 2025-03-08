@@ -10,6 +10,8 @@
       <module name="CircleToSearch.interface" target="21" />
       <module name="CircleToSearch.libxposed-compat" target="21" />
       <module name="CircleToSearch.service" target="21" />
+      <module name="Dinesh28.checks.main" target="21" />
+      <module name="Dinesh28.checks.test" target="21" />
       <module name="Dinesh28.libxposed-compat" target="21" />
     </bytecodeTargetLevel>
   </component>
