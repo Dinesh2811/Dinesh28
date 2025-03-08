@@ -61,35 +61,36 @@ dependencies {
 //    implementation(project(":interface"))   //  https://github.com/libxposed/service.git
 
 //    implementation(project(":library:CircleToSearch"))
-    api(project(":library:CircleToSearch"))
+//    api(project(":library:CircleToSearch"))
+    implementation(project(mapOf("path" to ":library:CircleToSearch")))
 
-//    compileOnly(project(":library:CircleToSearch"))
-
-    compileOnly(project(":library:libxposed:libxposed-compat"))
-    compileOnly(project(":library:libxposed:api"))
-    compileOnly(project(":library:libxposed:service"))
-    implementation(project(":library:libxposed:service:interface"))
-    compileOnly(project(":library:libxposed:api:checks"))
-
-    /*
-    compileOnly(project(":library:libxposed"))
-    compileOnly(project(":library:libxposed:libxposed-compat"))
-    compileOnly(project(":library:libxposed:api"))    //  https://github.com/libxposed/api.git
-    compileOnly(project(":library:libxposed:api:checks")) //  https://github.com/libxposed/api.git
-
-    compileOnly(project(":library:libxposed:service"))    //  https://github.com/libxposed/service.git
-    implementation(project(":library:libxposed:service:interface"))   //  https://github.com/libxposed/service.git
-
-     */
-
-//    compileOnly("io.github.libxposed:api:100")
-//    implementation("io.github.libxposed:service:100-1.0.0")
-
-    //  Xposed AP
-    compileOnly("de.robv.android.xposed:api:82")
-    compileOnly("de.robv.android.xposed:api:82:sources")
-
-    implementation(libs.hiddenapibypass)
+////    compileOnly(project(":library:CircleToSearch"))
+//
+//    compileOnly(project(":library:libxposed:libxposed-compat"))
+//    compileOnly(project(":library:libxposed:api"))
+//    compileOnly(project(":library:libxposed:service"))
+//    implementation(project(":library:libxposed:service:interface"))
+//    compileOnly(project(":library:libxposed:api:checks"))
+//
+//    /*
+//    compileOnly(project(":library:libxposed"))
+//    compileOnly(project(":library:libxposed:libxposed-compat"))
+//    compileOnly(project(":library:libxposed:api"))    //  https://github.com/libxposed/api.git
+//    compileOnly(project(":library:libxposed:api:checks")) //  https://github.com/libxposed/api.git
+//
+//    compileOnly(project(":library:libxposed:service"))    //  https://github.com/libxposed/service.git
+//    implementation(project(":library:libxposed:service:interface"))   //  https://github.com/libxposed/service.git
+//
+//     */
+//
+////    compileOnly("io.github.libxposed:api:100")
+////    implementation("io.github.libxposed:service:100-1.0.0")
+//
+//    //  Xposed AP
+//    compileOnly("de.robv.android.xposed:api:82")
+//    compileOnly("de.robv.android.xposed:api:82:sources")
+//
+//    implementation(libs.hiddenapibypass)
 
 
     implementation(libs.bundles.android)
