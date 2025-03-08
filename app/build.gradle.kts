@@ -61,6 +61,8 @@ dependencies {
 //    implementation(project(":interface"))   //  https://github.com/libxposed/service.git
 
 
+    compileOnly(project(":library:CircleToSearch"))
+
     compileOnly(project(":library:libxposed:libxposed-compat"))
     compileOnly(project(":library:libxposed:api"))
     compileOnly(project(":library:libxposed:service"))

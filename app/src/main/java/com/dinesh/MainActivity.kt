@@ -1,6 +1,7 @@
 package com.dinesh
 
 import android.os.Bundle
+import android.widget.Toast
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
@@ -12,6 +13,13 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import com.dinesh.ui.theme.AppTheme
+import com.parallelc.micts.R
+import com.parallelc.micts.config.AppConfig.CONFIG_NAME
+import com.parallelc.micts.config.AppConfig.DEFAULT_CONFIG
+import com.parallelc.micts.config.AppConfig.KEY_DEFAULT_DELAY
+import com.parallelc.micts.config.AppConfig.KEY_TILE_DELAY
+import com.parallelc.micts.config.AppConfig.KEY_VIBRATE
+import com.parallelc.micts.ui.activity.triggerCircleToSearch
 
 class MainActivity: ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -27,6 +35,19 @@ class MainActivity: ComponentActivity() {
                 }
             }
         }
+
+
+        val prefs = getSharedPreferences(CONFIG_NAME, MODE_PRIVATE)
+        val key = if (intent.getBooleanExtra("from_tile", false)) KEY_TILE_DELAY else KEY_DEFAULT_DELAY
+        val delay = prefs.getLong(key, DEFAULT_CONFIG[key] as Long)
+        if (delay > 0) {
+            Thread.sleep(delay)
+        }
+        if (!triggerCircleToSearch(1, this, prefs.getBoolean(KEY_VIBRATE, DEFAULT_CONFIG[KEY_VIBRATE] as Boolean))) {
+            Toast.makeText(this, getString(R.string.trigger_failed), Toast.LENGTH_SHORT).show()
+        }
+        finish()
+
     }
 }
 
