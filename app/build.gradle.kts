@@ -117,6 +117,7 @@ dependencies {
 
     // WorkManager
     implementation(libs.work.manager)
+    implementation(libs.work.manager.multiprocess)
 
     // DataStore
     implementation(libs.bundles.datastore.preferences)
@@ -127,6 +128,45 @@ dependencies {
 //    // Pluto
 //    debugImplementation(libs.bundles.debug.pluto)
 //    releaseImplementation(libs.bundles.release.pluto)
+
+
+    val media3_version = "1.5.1"
+    implementation("androidx.media3:media3-ui:$media3_version") // UI components for media playback
+    implementation("androidx.media3:media3-exoplayer:$media3_version") // Core ExoPlayer
+    implementation("androidx.media3:media3-exoplayer-dash:$media3_version") // DASH support
+    implementation("androidx.media3:media3-exoplayer-hls:$media3_version") // HLS support
+    implementation("androidx.media3:media3-exoplayer-smoothstreaming:$media3_version") // SmoothStreaming support
+    implementation("androidx.media3:media3-exoplayer-rtsp:$media3_version") // RTSP support
+    implementation("androidx.media3:media3-exoplayer-midi:$media3_version") // MIDI support
+    implementation("androidx.media3:media3-exoplayer-ima:$media3_version") // Interactive Media Ads support
+
+    implementation("androidx.media3:media3-session:$media3_version") // Media session management
+    implementation("androidx.media3:media3-extractor:$media3_version") // Media extraction utilities
+
+    implementation("androidx.media3:media3-datasource-cronet:$media3_version") // Cronet data source
+    implementation("androidx.media3:media3-datasource-okhttp:$media3_version") // OkHttp data source
+    implementation("androidx.media3:media3-datasource-rtmp:$media3_version") // RTMP data source
+
+    implementation("androidx.media3:media3-cast:$media3_version") // Google Cast integration
+    implementation("androidx.media3:media3-exoplayer-workmanager:$media3_version") // WorkManager integration
+    implementation("androidx.media3:media3-transformer:$media3_version") // Media transformation utilities
+    implementation("androidx.media3:media3-effect:$media3_version") // Video effects support
+    implementation("androidx.media3:media3-muxer:$media3_version") // Media muxing utilities
+
+    implementation("androidx.media3:media3-container:$media3_version") // Media container utilities
+    implementation("androidx.media3:media3-database:$media3_version") // Media database support
+    implementation("androidx.media3:media3-decoder:$media3_version") // Media decoding utilities
+    implementation("androidx.media3:media3-datasource:$media3_version") // General data source utilities
+    implementation("androidx.media3:media3-common:$media3_version") // Common media utilities
+    implementation("androidx.media3:media3-common-ktx:$media3_version") // Kotlin extensions for common media utilities
+
+
+    implementation("io.github.junkfood02.youtubedl-android:library:0.17.2") // https://github.com/JunkFood02/youtubedl-android
+    implementation("io.github.junkfood02.youtubedl-android:ffmpeg:0.17.2")
+    implementation("io.github.junkfood02.youtubedl-android:aria2c:0.17.2")
+    implementation("androidx.webkit:webkit:1.12.1")
+    implementation("org.jsoup:jsoup:1.19.1")
+    implementation("com.github.marlonlom:timeago:4.1.0")
 }
 
 /*

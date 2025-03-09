@@ -1,8 +1,5 @@
 import java.net.URI
 
-include(":library:CircleToSearch")
-
-
 pluginManagement {
     repositories {
         google {
@@ -25,6 +22,7 @@ dependencyResolutionManagement {
     repositories {
         google()
         mavenCentral()
+        maven("https://jitpack.io")
         maven {
             url = uri("https://api.xposed.info/")
         }
@@ -63,6 +61,8 @@ sourceControl {
 
 rootProject.name = "Dinesh28"
 include(":app")
+
+include(":library:CircleToSearch")
 
 include(":library:libxposed")
 include(":library:libxposed:api")

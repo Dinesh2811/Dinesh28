@@ -100,6 +100,7 @@ serialization-json = { module = "org.jetbrains.kotlinx:kotlinx-serialization-jso
 androidx-navigation-compose = { module = "androidx.navigation:navigation-compose", version.ref = "navigation" }
 androidx-lifecycle-extensions = { module = "androidx.lifecycle:lifecycle-extensions", version.ref = "lifecycle-extensions" }
 work-manager = { module = "androidx.work:work-runtime-ktx", version.ref = "work-manager" }
+work-manager-multiprocess = { module = "androidx.work:work-multiprocess", version.ref = "work-manager" }
 datastore-preferences = { module = "androidx.datastore:datastore-preferences", version.ref = "datastore-preferences" }
 datastore-preferences-core = { module = "androidx.datastore:datastore-preferences-core", version.ref = "datastore-preferences" }
 datastore = { module = "androidx.datastore:datastore", version.ref = "datastore-preferences" }
